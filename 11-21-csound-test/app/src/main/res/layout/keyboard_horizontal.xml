@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".KeyboardActivity"
+    android:orientation="vertical"
+    android:id="@+id/rootLayout"
+    android:weightSum="1"
+    android:contextClickable="false">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="211dp"
+        android:id="@+id/settingsPanel"
+        android:background="@color/abc_search_url_text_normal"
+        android:gravity="top|center_vertical"
+        android:shrinkColumns="true">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="25dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Octave"
+                android:id="@+id/octave_label"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:padding="10dp"
+                android:textColor="#0e0d0d"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:gravity="center_vertical"
+                android:textSize="16dp" />
+
+            <SeekBar
+                android:id="@+id/octave_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:max="8"
+                android:progress="0"
+                android:secondaryProgress="0"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="44dp"
+                android:layout_alignTop="@+id/octave_label"
+                android:layout_alignBottom="@+id/octave_label"
+                android:padding="10dp"
+                android:minWidth="300dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Instrument"
+                android:id="@+id/instrument_label"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:padding="10dp"
+                android:textColor="#0e0d0d"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:gravity="center_vertical"
+                android:textSize="16dp" />
+
+            <SeekBar
+                android:id="@+id/instrument_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:max="128"
+                android:progress="0"
+                android:secondaryProgress="0"
+                android:layout_alignTop="@+id/instrument_label"
+                android:layout_alignBottom="@+id/instrument_label"
+                android:padding="10dp"
+                android:minWidth="300dp"
+                android:longClickable="false"
+                android:layout_gravity="left"></SeekBar>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Pitch Bend"
+                android:id="@+id/pitch_text"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:padding="10dp"
+                android:textColor="#0e0d0d"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:gravity="center_vertical"
+                android:textSize="16dp" />
+
+            <SeekBar
+                android:id="@+id/pitch_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:max="128"
+                android:progress="0"
+                android:secondaryProgress="0"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginStart="44dp"
+                android:layout_alignTop="@+id/instrument_label"
+                android:layout_alignBottom="@+id/instrument_label"
+                android:padding="10dp"
+                android:minWidth="300dp"
+                android:longClickable="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Modulation"
+                android:id="@+id/modulationText"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:padding="10dp"
+                android:textColor="#0e0d0d"
+                android:textStyle="bold"
+                android:singleLine="true"
+                android:gravity="center_vertical"
+                android:textSize="16dp" />
+
+            <SeekBar
+                android:id="@+id/modulation_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:max="127"
+                android:progress="0"
+                android:secondaryProgress="0"
+                android:layout_alignTop="@+id/instrument_label"
+                android:layout_alignBottom="@+id/instrument_label"
+                android:padding="10dp"
+                android:minWidth="300dp"
+                android:longClickable="false"
+                android:layout_gravity="left" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:showDividers="middle|beginning|end"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:paddingTop="50dp">
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sustain"
+                android:id="@+id/sustain_switch"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:maxWidth="200dp" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reset Pitch"
+                android:id="@+id/reset_pitch"
+                android:layout_weight="1"
+                android:padding="10dp"
+                android:layout_gravity="center_horizontal" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stop All Notes"
+                android:id="@+id/reset_button"
+                android:singleLine="true"
+                android:enabled="true"
+                android:clickable="true"
+                android:layout_span="0"
+                android:layout_gravity="center_horizontal"
+                android:padding="10dp"
+                android:layout_weight="1" />
+
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/abc_search_url_text_normal">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:gravity="center_horizontal"
+            android:background="@color/abc_search_url_text_normal">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:text="C"
+                android:id="@+id/noteOne"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:padding="0dp" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:text="C#"
+                android:id="@+id/noteTwo"
+                android:padding="0dp"
+                android:textStyle="bold"
+                android:textSize="16dp" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:text="D"
+                android:id="@+id/noteThree"
+                android:padding="0dp"
+                android:textStyle="bold"
+                android:textSize="16dp" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:text="D#"
+                android:id="@+id/noteFour"
+                android:padding="0dp"
+                android:textStyle="bold"
+                android:textSize="16dp" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:text="E"
+                android:id="@+id/noteFive"
+                android:padding="0dp"
+                android:textStyle="bold"
+                android:textSize="16dp" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:text="F"
+                android:id="@+id/noteSix"
+                android:padding="0dp"
+                android:textStyle="bold"
+                android:textSize="16dp" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:text="F#"
+                android:id="@+id/noteSeven"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:padding="0dp" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:text="G"
+                android:id="@+id/noteEight"
+                android:padding="0dp"
+                android:textStyle="bold"
+                android:textSize="16dp" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:text="G#"
+                android:id="@+id/noteNine"
+                android:padding="0dp"
+                android:textStyle="bold"
+                android:textSize="16dp" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:text="A"
+                android:id="@+id/noteTen"
+                android:padding="0dp"
+                android:textStyle="bold"
+                android:textSize="16dp" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:text="A#"
+                android:id="@+id/noteEleven"
+                android:padding="0dp"
+                android:textStyle="bold"
+                android:textSize="16dp" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="75dp"
+                android:layout_height="match_parent"
+                android:text="B"
+                android:id="@+id/noteTwelve"
+                android:padding="0dp"
+                android:textStyle="bold"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
